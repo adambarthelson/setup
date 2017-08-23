@@ -10,20 +10,16 @@
 	<true/>
 	<key>Man Page Window Settings</key>
 	<string>Man Page</string>
-	<key>NSNavLastRootDirectory</key>
-	<string>~/Documents</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{712, 448}</string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>813 110 1061 497 0 0 1940 1212 </string>
+	<string>813 110 1061 507 0 0 1940 1212 </string>
 	<key>NSWindow Frame TTAppPreferences</key>
-	<string>743 659 667 533 0 0 1940 1212 </string>
+	<string>597 608 667 533 0 0 1940 1212 </string>
 	<key>NSWindow Frame TTWindow</key>
-	<string>71 811 524 349 0 0 1940 1212 </string>
+	<string>113 765 524 349 0 0 1940 1212 </string>
 	<key>NSWindow Frame TTWindow Basic</key>
-	<string>63 117 1474 1024 0 0 1940 1212 </string>
+	<string>50 195 1383 989 0 0 1940 1212 </string>
 	<key>NSWindow Frame TTWindow base16-default.dark.256</key>
-	<string>189 71 1642 1117 0 0 1940 1212 </string>
+	<string>133 386 935 669 0 0 1940 1212 </string>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0499999999999998</real>
 	<key>SecureKeyboardEntry</key>
@@ -926,8 +922,12 @@
 			</data>
 			<key>UseBrightBold</key>
 			<false/>
+			<key>columnCount</key>
+			<integer>130</integer>
 			<key>name</key>
 			<string>base16-default.dark.256</string>
+			<key>rowCount</key>
+			<integer>40</integer>
 			<key>shellExitAction</key>
 			<integer>1</integer>
 			<key>type</key>

@@ -1,0 +1,6 @@
+psutil
+python-hglib
+pygit2
+bzr
+pyuv
+powerline-status
