@@ -100,7 +100,7 @@ EOF
 # Tmux needs this to work
 sudo mkdir /usr/local/bin
 echo 'PATH=/usr/local/bin:$PATH /usr/local/bin/tmux' | sudo tee /usr/local/bin/tmux-helper
-chmod +x /usr/local/bin/tmux-helper
+sudo chmod +x /usr/local/bin/tmux-helper
 
 # Install Homebrew
 echo -e '\n' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
