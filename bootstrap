@@ -53,7 +53,9 @@ fi
 
 # Yep
 mkdir ~/.ssh
+ssh-keyscan github.com > ~/.ssh/known_hosts
 ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Secrets/id_rsa ~/.ssh/id_rs
+chmod 0400 ~/.ssh/id_rsa
 
 git clone git@github.com:gkze/setup.git ~/.dots
 
