@@ -46,11 +46,6 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 # Restart Dock
 killall Dock
 
-# Toggle Dark Mode
-if ! (defaults read NSGlobalDomain | grep -q AppleInterfaceStyle) || [[ "$(defaults read NSGlobalDomain AppleInterfaceStyle)" != "Dark" ]]; then
-  osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
-fi
-
 # Install Command Line Tools for Xcode
 touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 sudo softwareupdate -ai
@@ -62,6 +57,11 @@ ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Secrets/id_rsa ~/.ssh/id_r
 chmod 0400 ~/.ssh/id_rsa
 
 git clone git@github.com:gkze/setup.git ~/.dots
+
+# Toggle Dark Mode
+if ! (defaults read NSGlobalDomain | grep -q AppleInterfaceStyle) || [[ "$(defaults read NSGlobalDomain AppleInterfaceStyle)" != "Dark" ]]; then
+  osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
+fi
 
 # Set base16-default.dark.256 as the Terminal color scheme
 osascript <<EOF
@@ -97,8 +97,14 @@ tell application "Terminal"
 end tell
 EOF
 
+echo 'PATH=/usr/local/bin:$PATH /usr/local/bin/tmux' | sudo tee /usr/local/bin/tmux-helper
+chmod +x /usr/local/bin/tmux-helper
+
 # Install Homebrew
 echo -e '\n' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install brew packages
 (cd ~/.dots && brew bundle)
+
+# Install python packages
+(cd ~/.dots && sudo -H pip2 install -Ur requirements.txt)
