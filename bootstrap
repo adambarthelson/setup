@@ -51,6 +51,10 @@ if ! (defaults read NSGlobalDomain | grep -q AppleInterfaceStyle) || [[ "$(defau
   osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
 fi
 
+# Install Command Line Tools for Xcode
+touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
+sudo softwareupdate -ai
+
 # Yep
 mkdir ~/.ssh
 ssh-keyscan github.com > ~/.ssh/known_hosts
@@ -92,10 +96,6 @@ tell application "Terminal"
   end repeat
 end tell
 EOF
-
-# Install Command Line Tools for Xcode
-touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
-sudo softwareupdate -ai
 
 # Install Homebrew
 echo -e '\n' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
