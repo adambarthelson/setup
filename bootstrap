@@ -98,7 +98,7 @@ end tell
 EOF
 
 # Tmux needs this to work
-mkdir /usr/local/bin
+sudo mkdir /usr/local/bin
 echo 'PATH=/usr/local/bin:$PATH /usr/local/bin/tmux' | sudo tee /usr/local/bin/tmux-helper
 chmod +x /usr/local/bin/tmux-helper
 
