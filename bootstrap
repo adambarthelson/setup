@@ -51,8 +51,11 @@ if ! (defaults read NSGlobalDomain | grep -q AppleInterfaceStyle) || [[ "$(defau
   osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
 fi
 
-# Grab color scheme
-(cd ~/Downloads && curl -sO https://raw.githubusercontent.com/gkze/setup/master/base16-default.dark.256.terminal)
+# Yep
+mkdir ~/.ssh
+ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Secrets/id_rsa ~/.ssh/id_rs
+
+git clone git@github.com:gkze/setup.git ~/.dots
 
 # Set base16-default.dark.256 as the Terminal color scheme
 osascript <<EOF
@@ -66,7 +69,7 @@ tell application "Terminal"
   (* Open the custom theme so that it gets added to the list
      of available terminal themes (note: this will open two
      additional terminal windows). *)
-  do shell script "open $HOME/Downloads/" & themeName & ".terminal"
+  do shell script "open $HOME/.dots/" & themeName & ".terminal"
   (* Wait a little bit to ensure that the custom theme is added. *)
   delay 1
   (* Set the custom theme as the default terminal theme. *)
@@ -88,12 +91,12 @@ tell application "Terminal"
 end tell
 EOF
 
-# Clean up
-rm ~/Downloads/base16-default.dark.256.terminal
-
 # Install Command Line Tools for Xcode
 touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 sudo softwareupdate -ai
 
 # Install Homebrew
 echo -e '\n' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Install brew packages
+(cd ~/.dots && brew bundle)
