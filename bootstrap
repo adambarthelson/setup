@@ -49,7 +49,7 @@ killall Dock
 # Install Command Line Tools for Xcode
 touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 sudo softwareupdate -ai
-rm /tmp/.com/apple.dt.CommandLineTools.installondemand.in-progress
+rm /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 
 # Yep
 mkdir ~/.ssh
