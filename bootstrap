@@ -113,9 +113,6 @@ echo -e '\n' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/
 # Install python packages
 (cd ~/.dots && sudo -H pip2 install -Ur requirements.txt)
 
-# Set up zplug
-zplug install
-
 # Create config directory
 mkdir ~/.config
 
