@@ -112,6 +112,9 @@ echo -e '\n' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/
 # Install python packages
 (cd ~/.dots && sudo -H pip2 install -Ur requirements.txt)
 
+# Set up zplug
+zplug install
+
 # Create config directory
 mkdir ~/.config
 
@@ -119,10 +122,10 @@ mkdir ~/.config
 /usr/local/opt/fzf/install --all --no-update-rc
 
 # Link confguration files
-ln -s ~/.dots/.zshrc ~/.zshrc
-ln -s ~/.dots/.tmux.conf ~/.tmux.conf
-ln -s ~/.dots/powerline ~/.config/powerline
-ln -s ~/.dots/nvim ~/.config/nvim
+ln -sf ~/.dots/.zshrc ~/.zshrc
+ln -sf ~/.dots/.tmux.conf ~/.tmux.conf
+ln -sf ~/.dots/powerline ~/.config/powerline
+ln -sf ~/.dots/nvim ~/.config/nvim
 
 # Install vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
