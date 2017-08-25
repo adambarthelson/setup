@@ -99,6 +99,7 @@ EOF
 
 # Tmux needs this to work
 sudo mkdir /usr/local/bin
+# shellcheck disable=SC2016
 echo 'PATH=/usr/local/bin:$PATH /usr/local/bin/tmux' | sudo tee /usr/local/bin/tmux-helper
 sudo chmod +x /usr/local/bin/tmux-helper
 
@@ -119,3 +120,9 @@ ln -s ~/.dots/nvim ~/.config/nvim
 
 # Install Neovim plugins
 nvim +PlugInstall +qall
+
+# Terminal settings
+defaults import com.apple.Terminal ~/.dots/com.apple.Terminal.plist
+
+# Set up tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
