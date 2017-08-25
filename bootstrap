@@ -115,6 +115,9 @@ echo -e '\n' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/
 # Create config directory
 mkdir ~/.config
 
+# Install fzf
+/usr/local/opt/fzf/install --all --no-update-rc
+
 # Link confguration files
 ln -s ~/.dots/.zshrc ~/.zshrc
 ln -s ~/.dots/.tmux.conf ~/.tmux.conf
