@@ -1,0 +1,13 @@
+{
+  "common": {
+    "watcher": "uv"
+  },
+  "ext": {
+    "tmux": {
+      "theme": "default"
+    },
+    "shell": {
+      "theme": "default"
+    }
+  }
+}

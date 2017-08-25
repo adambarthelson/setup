@@ -110,3 +110,12 @@ echo -e '\n' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/
 
 # Install python packages
 (cd ~/.dots && sudo -H pip2 install -Ur requirements.txt)
+
+# Link confguration files
+ln -s ~/.dots/.zshrc ~/.zshrc
+ln -s ~/.dots/.tmux.conf ~/.tmux.conf
+ln -s ~/.dots/powerline ~/.config/powerline
+ln -s ~/.dots/nvim ~/.config/nvim
+
+# Install Neovim plugins
+nvim +PlugInstall +qall
