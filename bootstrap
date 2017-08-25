@@ -121,6 +121,10 @@ ln -s ~/.dots/.tmux.conf ~/.tmux.conf
 ln -s ~/.dots/powerline ~/.config/powerline
 ln -s ~/.dots/nvim ~/.config/nvim
 
+# Install vim-plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Install Neovim plugins
 nvim +PlugInstall +qall
 
